@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="peopleList">
+  <head>
+    <meta charset="utf-8">
+    <title>Lists of things</title>
+    <!-- Latest comp2iled and minified BOOTSTRAP  CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="contact.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="">Lists of things</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container main-content" ng-controller="PersonsController">
+
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-inline">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" ng-model="search.name" placeholder="Search name..." >
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" ng-model="search.email" placeholder="Search email..." >
+            </div>
+            <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+            <div class="form-group">
+              <select class="form-control" ng-model="order">
+                <option value="name">Name (ASC)</option>
+                <option value="-name">Name (DEC)</option>
+                <option value="email">Email (ASC)</option>
+                <option value="-email">Email (DEC)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <tr>
+              <th>#</th>
+              <th>Name
+                <span ng-click="order = 'name'" class="glyphicon glyphicon-menu-up"></span>
+                <span ng-click="order = '-name'" class="glyphicon glyphicon-menu-down"></span>
+              </th>
+              <th>Email
+                <span ng-click="order = 'email'" class="glyphicon glyphicon-menu-up"></span>
+                <span ng-click="order = '-email'" class="glyphicon glyphicon-menu-down"></span>
+              </th>
+              <th>Birthday</th>
+            </tr>
+            <tr ng-repeat="person in filterPersons = (persons | filter: search | orderBy: order)" ng-style="{'background-color': person.name == selectedPerson.name ? 'lightgreen' : ''}" ng-click="selectPerson(person, $index)">
+              <td>{{ $index + 1 }}</td>
+              <td>{{ person.name }}</td>
+              <td>{{ person.email }}</td>
+              <td>{{ person.birthdate | date:"longDate"}}</td>
+            </tr>
+            <tr ng-show="filterPersons.length == 0">
+              <td colspan="4">
+                <div class="alert alert-info">
+                  <p class="text-center">Sorry, No results found for search term '{{ search.name }}'</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+           <div class="panel-heading">Details</div>
+           <div class="panel-body">
+             <dl>
+               <dt>Name</dt>
+               <dd>{{ selectedPerson.name }}</dd>
+               <dt>Email</dt>
+               <dd>{{ selectedPerson.email }}</dd>
+               <dt>Birthday</dt>
+               <dd>{{ selectedPerson.birthdate }}</dd>
+               <dt>Contact</dt>
+               <dd>{{ selectedPerson.phonenumber }}</dd>
+               <dt>Address</dt>
+               <dd>{{ selectedPerson.address }}</dd>
+               <dt>City</dt>
+               <dd>{{ selectedPerson.city }}</dd>
+               <dt>Country</dt>
+               <dd>{{ selectedPerson.country }}</dd>
+             </dl>
+           </div>
+          </div>
+          <pre>{{ search }}</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest compiled and minified ANGULAR JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <!-- Custom JS -->
+    <script src="contact.js"></script>
+  </body>
+</html>
