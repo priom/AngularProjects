@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "London",
+    "street": "221B Baker Street",
+    "city": "London",
+    "state": "N/A",
+    "zip": "SW18 3YF",
+    "phone": "9-234-567-891"
+  },
+  {
+    "id": 2,
+    "name": "New York",
+    "street": "007 Bond Street",
+    "city": "Queens",
+    "state": "New York",
+    "zip": "10110",
+    "phone": "1-232-444-5454"
+  },
+  {
+    "id": 1,
+    "name": "Toronto",
+    "street": "420 Dundas Street",
+    "city": "Toronto",
+    "state": "Ontario",
+    "zip": "X1Y A2B",
+    "phone": "1-434-545-2343"
+  }
+]

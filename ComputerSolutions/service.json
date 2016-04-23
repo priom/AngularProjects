@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Hardware Repair",
+    "description": "Cras justo odio dapibus ac facilisis in egestas eget quam. Fusce dapibus tellus ac cursus commodo tortor mauris condimentum nibh, sed quia consequuntur magni dolores eos qui ratione voluptatem sequut fermentum massa justo sit amet.",
+    "image": "gadgets_devices_portable_equipment-512.png"
+  },
+  {
+  "id": 2,
+  "name": "Virus Removal",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+  "image": "gadgets_devices_portable_equipment-512.png"
+  },
+  {
+  "id": 3,
+  "name": "System Tuneup",
+  "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatsdf sdsfdsae vitae dicta sunt explicabo.",
+  "image": "gadgets_devices_portable_equipment-512.png"
+  }
+]
