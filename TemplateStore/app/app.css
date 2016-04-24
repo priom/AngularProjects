@@ -9,6 +9,9 @@ img {
   height: 100px;
 }
 
+.starter-template {
+  padding: 50px 0;
+}
 
 .menu {
   list-style: none;
